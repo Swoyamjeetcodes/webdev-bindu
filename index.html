@@ -8,7 +8,9 @@
 </head>
 <body class="home-page">
   <header class="topbar home-topbar">
-    <a class="brand" href="index.html">Bindu</a>
+    <a class="brand" href="index.html">
+      <img src="public/images/bindu.png" alt="Bindu">
+    </a>
 
     <nav class="topnav" aria-label="Main navigation">
       <a href="#">
@@ -42,9 +44,13 @@
     </label>
 
     <section class="hero-slider" aria-label="Featured craft story">
-      <img src="public/images/home-hero.jpg" alt="Woman working with natural fibers in a village lane">
-      <button class="slider-arrow left" aria-label="Previous slide">‹</button>
-      <button class="slider-arrow right" aria-label="Next slide">›</button>
+      <div class="hero-track" id="heroTrack">
+        <img src="public/images/home-hero.jpg" alt="Woman working with natural fibers in a village lane">
+        <img src="public/images/craft-4.jpg" alt="Artisan working on a handmade craft">
+        <img src="public/images/home-color.jpg" alt="Colorful handmade textile craft">
+      </div>
+      <button class="slider-arrow left" data-scroll-target="heroTrack" data-scroll-dir="-1" aria-label="Previous slide">‹</button>
+      <button class="slider-arrow right" data-scroll-target="heroTrack" data-scroll-dir="1" aria-label="Next slide">›</button>
       <div class="slider-dots" aria-hidden="true">
         <span></span>
         <span></span>
@@ -56,7 +62,7 @@
       <a class="section-title-link" href="craft.html">
         <h2>Crafts Of The Day</h2>
       </a>
-      <div class="overlap-strip">
+      <div class="overlap-strip scroll-row" id="craftsRow" data-scroll-row>
         <a class="craft-link-tile" href="craft.html">
           <img src="public/images/home-pottery.jpg" alt="Decorated pottery bottles">
           <span>Pottery</span>
@@ -73,12 +79,20 @@
           <img src="public/images/craft-5.jpg" alt="Painted craft bottles">
           <span>Wood Craft</span>
         </a>
+        <a class="craft-link-tile" href="craft.html">
+          <img src="public/images/home-textile.jpg" alt="Patterned handmade cloth">
+          <span>Weaving</span>
+        </a>
+        <a class="craft-link-tile" href="craft.html">
+          <img src="public/images/home-color.jpg" alt="Colorful craft details">
+          <span>Embroidery</span>
+        </a>
       </div>
     </section>
 
     <section class="home-section">
       <h2>Textiles Around Us</h2>
-      <div class="overlap-strip textile-strip">
+      <div class="overlap-strip textile-strip scroll-row" id="textilesRow" data-scroll-row>
         <article>
           <img src="public/images/home-textile.jpg" alt="Patterned bandhani textile">
           <span>Bandhani</span>
@@ -94,6 +108,14 @@
         <article>
           <img src="public/images/craft-2.jpg" alt="Dark woven ikat textile">
           <span>Double Ikat</span>
+        </article>
+        <article>
+          <img src="public/images/craft-1.jpg" alt="Colorful stitched fabric craft">
+          <span>Applique</span>
+        </article>
+        <article>
+          <img src="public/images/home-fashion.jpg" alt="Traditional dress textile details">
+          <span>Mirror Work</span>
         </article>
       </div>
     </section>
@@ -113,7 +135,8 @@
 
     <section class="home-section">
       <h2>Community Culture</h2>
-      <div class="community-row">
+      <div class="scroll-frame community-frame">
+        <div class="community-row scroll-row" id="communityRow" data-scroll-row>
         <article class="mini-post">
           <img src="public/images/home-fashion.jpg" alt="Traditional dress and jewelry">
           <div class="mini-actions">
@@ -138,14 +161,32 @@
             <span>➤</span>
           </div>
         </article>
-        <button class="round-next" aria-label="See more community posts">→</button>
+        <article class="mini-post">
+          <img src="public/images/home-pottery.jpg" alt="Decorated pottery bottles on display">
+          <div class="mini-actions">
+            <span>♥</span>
+            <span>♡</span>
+            <span>➤</span>
+          </div>
+        </article>
+        <article class="mini-post">
+          <img src="public/images/home-textile.jpg" alt="Textile pattern close up">
+          <div class="mini-actions">
+            <span>♥</span>
+            <span>♡</span>
+            <span>➤</span>
+          </div>
+        </article>
+        </div>
+        <button class="round-next" data-scroll-target="communityRow" data-scroll-dir="1" aria-label="See more community posts">→</button>
       </div>
     </section>
 
     <section class="home-section quiz-section">
       <h2>Quiz/Games</h2>
-      <div class="quiz-row">
-        <button class="round-back" aria-label="Previous quiz">←</button>
+      <div class="scroll-frame quiz-frame">
+        <button class="round-back" data-scroll-target="quizRow" data-scroll-dir="-1" aria-label="Previous quiz">←</button>
+        <div class="quiz-row scroll-row" id="quizRow" data-scroll-row>
         <article>
           <img src="public/images/home-painting.jpg" alt="Folk art quiz">
         </article>
@@ -155,10 +196,29 @@
         <article>
           <img src="public/images/craft-3.jpg" alt="Indian craft quiz">
         </article>
-        <button class="round-next" aria-label="Next quiz">→</button>
+        <article>
+          <img src="public/images/home-pottery.jpg" alt="Pottery quiz">
+        </article>
+        <article>
+          <img src="public/images/home-textile.jpg" alt="Textile quiz">
+        </article>
+        </div>
+        <button class="round-next" data-scroll-target="quizRow" data-scroll-dir="1" aria-label="Next quiz">→</button>
       </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <a class="footer-logo" href="index.html">
+      <img src="public/images/bindu.png" alt="Bindu">
+    </a>
+    <p>Celebrating handmade craft, textiles, stories, and community culture.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="craft.html">Craft Page</a>
+      <a href="#">Community</a>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>

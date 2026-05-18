@@ -55,23 +55,31 @@ input {
 .brand {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   min-width: 175px;
   min-height: 72px;
   padding: 0 18px;
   color: #fff;
   text-decoration: none;
-  font-family: "Brush Script MT", "Segoe Script", cursive;
-  font-size: 58px;
-  font-weight: 700;
-  line-height: 1;
   background: rgba(160, 34, 39, 0.4);
+}
+
+.brand img {
+  display: block;
+  max-width: 150px;
+  max-height: 62px;
+  object-fit: contain;
 }
 
 .home-topbar .brand {
   min-width: 92px;
   min-height: 44px;
   padding: 0 8px;
-  font-size: 36px;
+}
+
+.home-topbar .brand img {
+  max-width: 82px;
+  max-height: 38px;
 }
 
 .topnav {
@@ -454,10 +462,15 @@ input {
   transform: rotate(-18deg);
 }
 
-.community-row .round-next {
+.scroll-frame {
+  position: relative;
+}
+
+.community-frame .round-next {
   position: absolute;
   right: -22px;
   top: 42%;
+  z-index: 2;
 }
 
 .quiz-section {
@@ -487,19 +500,19 @@ input {
   object-fit: cover;
 }
 
-.quiz-row .round-back,
-.quiz-row .round-next {
+.quiz-frame .round-back,
+.quiz-frame .round-next {
   position: absolute;
   top: 50%;
   z-index: 2;
   transform: translateY(-50%);
 }
 
-.quiz-row .round-back {
+.quiz-frame .round-back {
   left: 0;
 }
 
-.quiz-row .round-next {
+.quiz-frame .round-next {
   right: 0;
 }
 
@@ -828,7 +841,7 @@ h1 {
     grid-template-columns: 1fr;
   }
 
-  .community-row .round-next {
+  .community-frame .round-next {
     right: -12px;
   }
 
@@ -858,5 +871,186 @@ h1 {
 
   .post-photo {
     height: 300px;
+  }
+}
+
+
+.hero-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.hero-track::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-track img {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+.scroll-row {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+.home-page .hero-track img,
+.home-page .overlap-strip img,
+.home-page .community-row img,
+.home-page .quiz-row img {
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.home-page .hero-track img:hover,
+.home-page .overlap-strip a:hover img,
+.home-page .overlap-strip article:hover img,
+.home-page .community-row article:hover img,
+.home-page .quiz-row article:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.08);
+}
+
+.hero-slider,
+.overlap-strip article,
+.overlap-strip .craft-link-tile,
+.mini-post,
+.quiz-row article {
+  overflow: hidden;
+}
+
+.craft-gallery-section {
+  margin-top: 76px;
+}
+
+.craft-gallery-section h2 {
+  margin: 0 0 28px;
+  color: #5b1613;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  text-align: center;
+}
+
+.craft-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.craft-gallery article {
+  height: 230px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
+  background: #fff;
+}
+
+.craft-gallery img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.site-footer {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  padding: 34px 20px 42px;
+  color: #fff;
+  background: #a91d10;
+  text-align: center;
+}
+
+.footer-logo img {
+  width: 112px;
+  max-height: 56px;
+  object-fit: contain;
+}
+
+.site-footer p {
+  margin: 0;
+  max-width: 560px;
+  font-size: 15px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 850px) {
+  .brand img {
+    max-width: 110px;
+    max-height: 46px;
+  }
+
+  .craft-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .home-topbar .brand img {
+    max-width: 82px;
+    max-height: 36px;
+  }
+
+  .craft-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.community-row.scroll-row {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.community-row.scroll-row .mini-post {
+  flex: 0 0 calc((100% - 36px) / 3);
+}
+
+.quiz-row.scroll-row {
+  display: flex;
+  overflow-x: auto;
+  padding: 0 34px 10px;
+}
+
+.quiz-row.scroll-row article {
+  flex: 0 0 calc((100% - 48px) / 3);
+}
+
+@media (max-width: 560px) {
+  .community-row.scroll-row .mini-post {
+    flex-basis: 82%;
+  }
+
+  .quiz-row.scroll-row article {
+    flex-basis: 42%;
   }
 }
