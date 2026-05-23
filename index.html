@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bindu Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="home-page">
   <header class="topbar home-topbar">
     <a class="brand" href="index.html">
@@ -14,23 +17,23 @@
 
     <nav class="topnav" aria-label="Main navigation">
       <a href="#">
-        <span class="nav-icon">●</span>
+        <i class="fa-solid fa-location-dot nav-icon" aria-hidden="true"></i>
         Location
       </a>
       <a href="craft.html">
-        <span class="nav-icon">♟</span>
+        <i class="fa-solid fa-people-group nav-icon" aria-hidden="true"></i>
         Community
       </a>
       <a href="#">
-        <span class="nav-icon text-icon">Aa</span>
+        <i class="fa-solid fa-language nav-icon" aria-hidden="true"></i>
         Language
       </a>
       <a href="#">
-        <span class="nav-icon">✚</span>
+        <i class="fa-solid fa-universal-access nav-icon" aria-hidden="true"></i>
         Accessibility
       </a>
       <a href="#">
-        <span class="nav-icon">◕</span>
+        <i class="fa-solid fa-circle-user nav-icon" aria-hidden="true"></i>
         Profile
       </a>
     </nav>
@@ -38,21 +41,23 @@
 
   <main class="home">
     <label class="search-box home-search">
-      <span class="search-icon" aria-hidden="true"></span>
+      <i class="fa-brands fa-sistrix search-icon" aria-hidden="true"></i>
       <input type="search" placeholder="Search by handicraft, handloom, place">
-      <button class="camera-button" aria-label="Search by image">▣</button>
+      <button class="camera-button" aria-label="Search by image">
+        <i class="fa-solid fa-camera" aria-hidden="true"></i>
+      </button>
     </label>
 
     <section class="hero-slider" aria-label="Featured craft story">
       <div class="hero-track" id="heroTrack">
-        <img src="public/images/home-hero.jpg" alt="Woman working with natural fibers in a village lane">
+        <img class="active" src="public/images/home-hero.jpg" alt="Woman working with natural fibers in a village lane">
         <img src="public/images/craft-4.jpg" alt="Artisan working on a handmade craft">
         <img src="public/images/home-color.jpg" alt="Colorful handmade textile craft">
       </div>
-      <button class="slider-arrow left" data-scroll-target="heroTrack" data-scroll-dir="-1" aria-label="Previous slide">‹</button>
-      <button class="slider-arrow right" data-scroll-target="heroTrack" data-scroll-dir="1" aria-label="Next slide">›</button>
+      <button class="slider-arrow left" data-hero-dir="-1" aria-label="Previous slide">‹</button>
+      <button class="slider-arrow right" data-hero-dir="1" aria-label="Next slide">›</button>
       <div class="slider-dots" aria-hidden="true">
-        <span></span>
+        <span class="active"></span>
         <span></span>
         <span></span>
       </div>
@@ -62,146 +67,253 @@
       <a class="section-title-link" href="craft.html">
         <h2>Crafts Of The Day</h2>
       </a>
-      <div class="overlap-strip scroll-row" id="craftsRow" data-scroll-row>
-        <a class="craft-link-tile" href="craft.html">
-          <img src="public/images/home-pottery.jpg" alt="Decorated pottery bottles">
-          <span>Pottery</span>
-        </a>
-        <a class="craft-link-tile" href="craft.html">
-          <img src="public/images/craft-1.jpg" alt="Colorful handmade folk art">
-          <span>Lippan Art</span>
-        </a>
-        <a class="craft-link-tile feature-tile" href="craft.html">
-          <img src="public/images/home-painting.jpg" alt="Bright Pattachitra style face painting">
-          <span>Pipli Art</span>
-        </a>
-        <a class="craft-link-tile" href="craft.html">
-          <img src="public/images/craft-5.jpg" alt="Painted craft bottles">
-          <span>Wood Craft</span>
-        </a>
-        <a class="craft-link-tile" href="craft.html">
-          <img src="public/images/home-textile.jpg" alt="Patterned handmade cloth">
-          <span>Weaving</span>
-        </a>
-        <a class="craft-link-tile" href="craft.html">
-          <img src="public/images/home-color.jpg" alt="Colorful craft details">
-          <span>Embroidery</span>
-        </a>
+      <div class="rail-viewport">
+        <div class="top-picks-rail scroll-row" id="craftsRow" data-scroll-row>
+          <a class="craft-link-tile" href="craft.html">
+            <img src="public/images/home-pottery.jpg" alt="Decorated pottery bottles">
+            <span>Pottery</span>
+            <small>Clay forms shaped by hand and fire</small>
+          </a>
+          <a class="craft-link-tile" href="craft.html">
+            <img src="public/images/craft-1.jpg" alt="Colorful handmade folk art">
+            <span>Lippan Art</span>
+            <small>Mirror-work walls from Kutch homes</small>
+          </a>
+          <a class="craft-link-tile" href="craft.html">
+            <img src="public/images/home-painting.jpg" alt="Bright Pattachitra style face painting">
+            <span>Pipli Art</span>
+            <small>Bold applique stories in cloth</small>
+          </a>
+          <a class="craft-link-tile" href="craft.html">
+            <img src="public/images/craft-5.jpg" alt="Painted craft bottles">
+            <span>Wood Craft</span>
+            <small>Carved surfaces with everyday warmth</small>
+          </a>
+          <a class="craft-link-tile" href="craft.html">
+            <img src="public/images/home-textile.jpg" alt="Patterned handmade cloth">
+            <span>Weaving</span>
+            <small>Threads becoming structure and rhythm</small>
+          </a>
+          <a class="craft-link-tile" href="craft.html">
+            <img src="public/images/craft-2.jpg" alt="Dark woven ikat textile">
+            <span>Ikat Craft</span>
+            <small>Dyed threads aligned for bold patterns</small>
+          </a>
+          <a class="craft-link-tile" href="craft.html">
+            <img src="public/images/craft-3.jpg" alt="Handcrafted art display">
+            <span>Metal Craft</span>
+            <small>Hammered forms with village flair</small>
+          </a>
+          <a class="craft-link-tile" href="craft.html">
+            <img src="public/images/home-fashion.jpg" alt="Traditional dress and jewelry">
+            <span>Folk Fashion</span>
+            <small>Wearable culture in vivid detail</small>
+          </a>
+          <a class="craft-link-tile" href="craft.html">
+            <img src="public/images/home-color.jpg" alt="Colorful handmade textile craft">
+            <span>Natural Dyes</span>
+            <small>Color washed in earthy tones</small>
+          </a>
+        </div>
       </div>
     </section>
 
     <section class="home-section">
-      <h2>Textiles Around Us</h2>
-      <div class="overlap-strip textile-strip scroll-row" id="textilesRow" data-scroll-row>
-        <article>
-          <img src="public/images/home-textile.jpg" alt="Patterned bandhani textile">
-          <span>Bandhani</span>
-        </article>
-        <article>
-          <img src="public/images/craft-5.jpg" alt="Traditional patola fabric">
-          <span>Patola</span>
-        </article>
-        <article class="feature-tile">
-          <img src="public/images/home-color.jpg" alt="Folded silk textile">
-          <span>Kanjivaram</span>
-        </article>
-        <article>
-          <img src="public/images/craft-2.jpg" alt="Dark woven ikat textile">
-          <span>Double Ikat</span>
-        </article>
-        <article>
-          <img src="public/images/craft-1.jpg" alt="Colorful stitched fabric craft">
-          <span>Applique</span>
-        </article>
-        <article>
-          <img src="public/images/home-fashion.jpg" alt="Traditional dress textile details">
-          <span>Mirror Work</span>
-        </article>
+      <a class="section-title-link" href="craft.html">
+        <h2>Textiles Around Us</h2>
+      </a>
+      <div class="rail-viewport">
+        <div class="top-picks-rail textile-strip scroll-row" id="textilesRow" data-scroll-row>
+          <a class="craft-link-tile" href="craft.html">
+            <img src="public/images/home-textile.jpg" alt="Patterned bandhani textile">
+            <span>Bandhani</span>
+            <small>Tie-dyed constellations of color</small>
+          </a>
+          <a class="craft-link-tile" href="craft.html">
+            <img src="public/images/craft-5.jpg" alt="Traditional patola fabric">
+            <span>Patola</span>
+            <small>Precision-woven heirloom geometry</small>
+          </a>
+          <a class="craft-link-tile" href="craft.html">
+            <img src="public/images/home-color.jpg" alt="Folded silk textile">
+            <span>Kanjivaram</span>
+            <small>Silk, temple borders, and ceremony</small>
+          </a>
+          <a class="craft-link-tile" href="craft.html">
+            <img src="public/images/craft-2.jpg" alt="Dark woven ikat textile">
+            <span>Double Ikat</span>
+            <small>Pattern planned before the loom</small>
+          </a>
+          <a class="craft-link-tile" href="craft.html">
+            <img src="public/images/craft-1.jpg" alt="Colorful stitched fabric craft">
+            <span>Applique</span>
+            <small>Layered fabric cut into stories</small>
+          </a>
+          <a class="craft-link-tile" href="craft.html">
+            <img src="public/images/home-pottery.jpg" alt="Decorated pottery bottles on display">
+            <span>Terracotta</span>
+            <small>Earthen textures with warm glaze</small>
+          </a>
+          <a class="craft-link-tile" href="craft.html">
+            <img src="public/images/craft-4.jpg" alt="Artisan working on a handmade craft">
+            <span>Handloom</span>
+            <small>Loom-made rhythm in every weave</small>
+          </a>
+          <a class="craft-link-tile" href="craft.html">
+            <img src="public/images/home-painting.jpg" alt="Bright Pattachitra style face painting">
+            <span>Pattachitra</span>
+            <small>Painted narratives on cloth</small>
+          </a>
+          <a class="craft-link-tile" href="craft.html">
+            <img src="public/images/home-fashion.jpg" alt="Traditional dress and jewelry">
+            <span>Embroidery</span>
+            <small>Needlework with folk motifs</small>
+          </a>
+        </div>
       </div>
     </section>
 
     <section class="missed-card">
       <h2>Stories You Might Have Missed</h2>
       <div class="story-panel">
-        <img src="public/images/home-story.jpg" alt="Folk painting story artwork">
+        <img class="story-image" src="public/images/home-story.jpg" alt="Folk painting story artwork">
         <div class="story-copy">
-          <h3>The story of Navagunjara</h3>
-          <p>A mythical creature from Odisha folklore</p>
+          <h3 class="story-title">The story of Navagunjara</h3>
+          <p class="story-desc">A mythical creature from Odisha folklore</p>
           <a href="#">Read</a>
         </div>
-        <button aria-label="Open story">→</button>
+        <button class="story-next" aria-label="Next story">→</button>
       </div>
     </section>
 
     <section class="home-section">
       <h2>Community Culture</h2>
       <div class="scroll-frame community-frame">
+        <button class="round-back" data-scroll-target="communityRow" data-scroll-dir="-1"
+          aria-label="Previous community posts">←</button>
         <div class="community-row scroll-row" id="communityRow" data-scroll-row>
-        <article class="mini-post">
-          <img src="public/images/home-fashion.jpg" alt="Traditional dress and jewelry">
-          <div class="mini-actions">
-            <span>♥</span>
-            <span>♡</span>
-            <span>➤</span>
-          </div>
-        </article>
-        <article class="mini-post">
-          <img src="public/images/craft-4.jpg" alt="Handloom weaving">
-          <div class="mini-actions">
-            <span>♥</span>
-            <span>♡</span>
-            <span>➤</span>
-          </div>
-        </article>
-        <article class="mini-post">
-          <img src="public/images/home-color.jpg" alt="Artisan painting a colorful craft">
-          <div class="mini-actions">
-            <span>♥</span>
-            <span>♡</span>
-            <span>➤</span>
-          </div>
-        </article>
-        <article class="mini-post">
-          <img src="public/images/home-pottery.jpg" alt="Decorated pottery bottles on display">
-          <div class="mini-actions">
-            <span>♥</span>
-            <span>♡</span>
-            <span>➤</span>
-          </div>
-        </article>
-        <article class="mini-post">
-          <img src="public/images/home-textile.jpg" alt="Textile pattern close up">
-          <div class="mini-actions">
-            <span>♥</span>
-            <span>♡</span>
-            <span>➤</span>
-          </div>
-        </article>
+          <article class="mini-post">
+            <img src="public/images/home-fashion.jpg" alt="Traditional dress and jewelry">
+            <div class="mini-actions">
+              <span>♥</span>
+              <span>♡</span>
+              <span>➤</span>
+            </div>
+          </article>
+          <article class="mini-post">
+            <img src="public/images/craft-4.jpg" alt="Handloom weaving">
+            <div class="mini-actions">
+              <span>♥</span>
+              <span>♡</span>
+              <span>➤</span>
+            </div>
+          </article>
+          <article class="mini-post">
+            <img src="public/images/home-color.jpg" alt="Artisan painting a colorful craft">
+            <div class="mini-actions">
+              <span>♥</span>
+              <span>♡</span>
+              <span>➤</span>
+            </div>
+          </article>
+          <article class="mini-post">
+            <img src="public/images/home-pottery.jpg" alt="Decorated pottery bottles on display">
+            <div class="mini-actions">
+              <span>♥</span>
+              <span>♡</span>
+              <span>➤</span>
+            </div>
+          </article>
+          <article class="mini-post">
+            <img src="public/images/home-textile.jpg" alt="Textile pattern close up">
+            <div class="mini-actions">
+              <span>♥</span>
+              <span>♡</span>
+              <span>➤</span>
+            </div>
+          </article>
+          <article class="mini-post">
+            <img src="public/images/home-painting.jpg" alt="Folk painting detail">
+            <div class="mini-actions">
+              <span>♥</span>
+              <span>♡</span>
+              <span>➤</span>
+            </div>
+          </article>
+          <article class="mini-post">
+            <img src="public/images/craft-1.jpg" alt="Colorful handmade folk art">
+            <div class="mini-actions">
+              <span>♥</span>
+              <span>♡</span>
+              <span>➤</span>
+            </div>
+          </article>
+          <article class="mini-post">
+            <img src="public/images/craft-2.jpg" alt="Dark woven ikat textile">
+            <div class="mini-actions">
+              <span>♥</span>
+              <span>♡</span>
+              <span>➤</span>
+            </div>
+          </article>
+          <article class="mini-post">
+            <img src="public/images/craft-3.jpg" alt="Handcrafted art display">
+            <div class="mini-actions">
+              <span>♥</span>
+              <span>♡</span>
+              <span>➤</span>
+            </div>
+          </article>
+          <article class="mini-post">
+            <img src="public/images/home-story.jpg" alt="Folk painting story artwork">
+            <div class="mini-actions">
+              <span>♥</span>
+              <span>♡</span>
+              <span>➤</span>
+            </div>
+          </article>
         </div>
-        <button class="round-next" data-scroll-target="communityRow" data-scroll-dir="1" aria-label="See more community posts">→</button>
+        <button class="round-next" data-scroll-target="communityRow" data-scroll-dir="1"
+          aria-label="See more community posts">→</button>
       </div>
     </section>
 
     <section class="home-section quiz-section">
       <h2>Quiz/Games</h2>
       <div class="scroll-frame quiz-frame">
-        <button class="round-back" data-scroll-target="quizRow" data-scroll-dir="-1" aria-label="Previous quiz">←</button>
+        <button class="round-back" data-scroll-target="quizRow" data-scroll-dir="-1"
+          aria-label="Previous quiz">←</button>
         <div class="quiz-row scroll-row" id="quizRow" data-scroll-row>
-        <article>
-          <img src="public/images/home-painting.jpg" alt="Folk art quiz">
-        </article>
-        <article>
-          <img src="public/images/home-game.jpg" alt="Traditional board game quiz">
-        </article>
-        <article>
-          <img src="public/images/craft-3.jpg" alt="Indian craft quiz">
-        </article>
-        <article>
-          <img src="public/images/home-pottery.jpg" alt="Pottery quiz">
-        </article>
-        <article>
-          <img src="public/images/home-textile.jpg" alt="Textile quiz">
-        </article>
+          <article>
+            <img src="public/images/home-painting.jpg" alt="Folk art quiz">
+          </article>
+          <article>
+            <img src="public/images/home-game.jpg" alt="Traditional board game quiz">
+          </article>
+          <article>
+            <img src="public/images/craft-3.jpg" alt="Indian craft quiz">
+          </article>
+          <article>
+            <img src="public/images/home-pottery.jpg" alt="Pottery quiz">
+          </article>
+          <article>
+            <img src="public/images/home-textile.jpg" alt="Textile quiz">
+          </article>
+          <article>
+            <img src="public/images/craft-1.jpg" alt="Applique craft quiz">
+          </article>
+          <article>
+            <img src="public/images/craft-2.jpg" alt="Ikat pattern quiz">
+          </article>
+          <article>
+            <img src="public/images/craft-4.jpg" alt="Handloom weaving quiz">
+          </article>
+          <article>
+            <img src="public/images/home-color.jpg" alt="Color dye quiz">
+          </article>
+          <article>
+            <img src="public/images/home-fashion.jpg" alt="Folk fashion quiz">
+          </article>
         </div>
         <button class="round-next" data-scroll-target="quizRow" data-scroll-dir="1" aria-label="Next quiz">→</button>
       </div>
@@ -222,4 +334,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
