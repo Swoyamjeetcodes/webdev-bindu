@@ -144,6 +144,16 @@ input {
   color: #9e9e9e;
 }
 
+.craft-page .search-box {
+  width: min(100%, 1100px);
+  min-height: 56px;
+  margin: 10px auto 38px;
+  padding: 0 24px;
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
 .home {
   position: relative;
   z-index: 1;
@@ -558,7 +568,7 @@ input {
 }
 
 .quiz-row.scroll-row article {
-  flex: 0 0 calc((100% - 80px) / 5);
+  flex: 0 0 calc((100% - 260px) / 4);
 }
 
 .quiz-row article {
@@ -619,6 +629,10 @@ h1 {
   margin: 0;
   font-size: 42px;
   font-weight: 500;
+}
+
+.craft-page h1 {
+  font-size: 28px;
 }
 
 .quick-row {
